@@ -1,0 +1,33 @@
+.button-primary {
+  position: relative;
+  display: inline-flex;
+  padding: 12px 36px;
+  border-radius: 32px;
+  border: 2px solid #c5fcfc;
+  gap: 8px;
+  color: #c5fcfc;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.5s;
+}
+.button-primary::before {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  background: #c5fcfc;
+  transition: width 0.5s, height 0.5s;
+}
+.button-primary:hover::before {
+  width: 300px;
+  height: 300px;
+
+}
+
+.button-primary:hover{
+    color: black;
+}

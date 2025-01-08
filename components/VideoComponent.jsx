@@ -9,24 +9,28 @@ export default function VideoComponent() {
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animate width and height of the growDiv
+    // Animate scale and translateY of the growDiv with a gradual transition
     gsap.to(".growDiv", {
-    scale:10,
-      ease: "none", // Linear growth without easing
+      scale: 10, // Scale the div by 10 times
+      y: 0, // Set translateY to 0 after animation
+      ease: "power1.inOut", // Smooth easing for a more natural transition
+      transformOrigin: "center center", // Make sure it scales from the center
       scrollTrigger: {
         trigger: ".growDiv", // Element that triggers the scroll
-        start: "top center", // Start animation when growDiv is 20% into the viewport
-        end: "bottom center", // End animation when growDiv is 80% into the viewport
-        scrub: true, // Smoothly ties animation to scroll position
+        start: "top center", // Start animation when the top of growDiv reaches the center of the viewport
+        end: "bottom center", // End animation when the bottom of growDiv reaches the center of the viewport
+        scrub: 1, // Smoothly ties animation to scroll with a delay for smoothness
         pin: true, // Pin the element during animation
       },
     });
   }, []);
 
   return (
-    <div className="h-[200vh] flex items-center justify-center">
+    <div className="h-[100vh] flex items-center relative justify-center bg-gray-900">
       {/* Scrollable Content */}
-      <div className="growDiv w-32 h-32 flex items-center justify-center rounded-md overflow-hidden ">
+      <div className="growDiv w-32 aspect-video flex items-center justify-center rounded-[6%] overflow-hidden"
+        style={{ transform: "translateY(-500px)" }} // Initial translateY to -70px
+      >
         <video
           src="/video/DR%20Website.mov"
           className="w-full h-full object-cover"
@@ -38,4 +42,7 @@ export default function VideoComponent() {
     </div>
   );
 }
+
+
+
 

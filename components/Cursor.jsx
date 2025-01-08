@@ -43,7 +43,7 @@ const Cursor = () => {
         left: position.x - 7, // Adjust to center the dot
         width: "14px",
         height: "14px",
-        backgroundColor: "aqua",
+        backgroundColor: "#c5fcfc",
         borderRadius: "50%",
         pointerEvents: "none", // Ensure it doesn't block interactions
         zIndex: 1000,

@@ -8,6 +8,7 @@ import SkeletonLoading from "../../components/SkeletonLoading";
 import Cursor from "../../components/Cursor";
 import CursorWithRedBorder from "../../components/CursorWithRedBorder";
 import VideoComponent from '../../components/VideoComponent';
+import Hero from '../../components/Hero';
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -59,19 +60,17 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <header className="bg-[#121315]">
+          <header className="bg-gray-900">
             <nav>
               <Navbar />
             </nav>
           </header>
-          <main className="bg-[#121315] min-h-screen">
+          <main className="bg-gray-900 min-h-screen">
             {/* Add your main content here */}
+            <Hero/>
             <VideoComponent />
-            <div className="h-[200vh] bg-gray-900 text-white flex items-center justify-center">
-              <p className="text-4xl">Scroll Down Smoothly with Lenis!</p>
-            </div>
           </main>
-          <footer className="bg-[#121315]">
+          <footer className="bg-gray-900">
             {/* Footer content */}
           </footer>
         </>
