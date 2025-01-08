@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+/* For WebKit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust scrollbar width */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar-track {
+  background: #000; /* Black scrollbar track */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+::-webkit-scrollbar-thumb {
+  background: #fff; /* White scrollbar thumb, change to #00ffff for aqua */
+  border-radius: 6px; /* Rounded scrollbar thumb */
 }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Slightly darker when hovered */
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin; /* Makes scrollbar thinner */
+  scrollbar-color: #fff #000; /* White thumb on black track, change #fff to #00ffff for aqua */
+}
+
+
+/* smoke */

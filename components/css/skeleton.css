@@ -1,0 +1,21 @@
+.svg-loading path{
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 0.5;
+    stroke-dasharray: 350;
+    stroke-dashoffset: 350;
+    animation: textAnimation 3s ease-in-out 1 ;
+}
+
+@keyframes textAnimation {
+    0% {
+        stroke-dashoffset: 350;
+    }
+    80%{
+        fill: transparent
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
