@@ -11,8 +11,10 @@ import VideoComponent from '../../components/VideoComponent';
 import Hero from '../../components/Hero';
 // import Work from '../../components/Work';
 import dynamic from 'next/dynamic'
+// import WorkDetails from '../../components/WorkDetails';
  
 const Work = dynamic(() => import('../../components/Work'), { ssr: false })
+const WorkDetails = dynamic(() => import('../../components/WorkDetails'), { ssr: false })
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -55,7 +57,7 @@ export default function Home() {
   }, []);
   const [dark,setDark]=useState(true)
   return (
-    <div className={`${oswald.variable} font-sans ${dark ? "dark": ""}`}>
+    <div className={`${oswald.variable} font-sans ${dark ? "dark": ""} overflow-hidden`}>
       <Cursor />
       <CursorWithRedBorder />
       {isLoading ? (
@@ -74,6 +76,7 @@ export default function Home() {
             <Hero/>
             <VideoComponent />
             <Work/>
+            <WorkDetails/>
           </main>
           <footer className="dark:bg-primary">
             {/* Footer content */}
