@@ -51,10 +51,10 @@ const Navbar = ({ setDark, dark }) => {
       <div className="navbar-center flex">
         <button
           onClick={() => setDark(!dark)}
-          className="border border-primary dark:border-white rounded-full py-1 px-2"
+          className="border border-primary dark:border-secondary rounded-full py-1 px-2"
         >
           {dark ? (
-            <FontAwesomeIcon icon={faSun} className="h-4 w-4" /> // h-4 and w-4 for 16px
+            <FontAwesomeIcon icon={faSun} className="h-4 w-4 dark:text-secondary" /> // h-4 and w-4 for 16px
           ) : (
             <FontAwesomeIcon icon={faMoon} className="h-4 w-4" />
           )}

@@ -9,6 +9,10 @@ import Cursor from "../../components/Cursor";
 import CursorWithRedBorder from "../../components/CursorWithRedBorder";
 import VideoComponent from '../../components/VideoComponent';
 import Hero from '../../components/Hero';
+// import Work from '../../components/Work';
+import dynamic from 'next/dynamic'
+ 
+const Work = dynamic(() => import('../../components/Work'), { ssr: false })
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -69,6 +73,7 @@ export default function Home() {
             {/* Add your main content here */}
             <Hero/>
             <VideoComponent />
+            <Work/>
           </main>
           <footer className="dark:bg-primary">
             {/* Footer content */}
