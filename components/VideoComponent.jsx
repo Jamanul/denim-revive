@@ -26,7 +26,7 @@ export default function VideoComponent() {
   }, []);
 
   return (
-    <div className="h-[100vh] flex items-center relative justify-center bg-gray-900">
+    <div className="h-[100vh] flex items-center relative justify-center dark:bg-primary">
       {/* Scrollable Content */}
       <div className="growDiv w-32 aspect-video flex items-center justify-center rounded-[6%] overflow-hidden"
         style={{ transform: "translateY(-500px)" }} // Initial translateY to -70px

@@ -7,15 +7,15 @@ const Hero = () => {
       <div className="text-center h-[80vh] flex justify-center items-center flex-col">
         <h2
           style={{ wordSpacing: 0.01 + "em" }}
-          className="text-[88px] text-white uppercase font-bold leading-[60px] tracking-tighter"
+          className="text-[88px] dark:text-white uppercase font-bold leading-[60px] tracking-tighter"
         >
           DENIM REVIVE
           <span className="block leading-[1.1]">
             {" "}
-            From Waste to Wearable Denim
+            Wear the change
           </span>
         </h2>
-        <p className="mt-4 text-white tracking-tighter uppercase font-medium">
+        <p className="mt-4 dark:text-white tracking-tighter uppercase font-medium">
           <span className="block">
             "DENIM REVIVE offers sustainably crafted denim products,
           </span>{" "}

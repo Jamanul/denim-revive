@@ -63,3 +63,7 @@ html {
   opacity: 1; /* Fade in the second image */
   transform: scale(1.05); /* Slightly scale up the second image for effect */
 }
+
+* {
+  @apply  transition-colors duration-200;
+}

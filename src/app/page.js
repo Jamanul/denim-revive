@@ -49,9 +49,9 @@ export default function Home() {
       lenis.destroy();
     };
   }, []);
-
+  const [dark,setDark]=useState(true)
   return (
-    <div className={`${oswald.variable} font-sans`}>
+    <div className={`${oswald.variable} font-sans ${dark ? "dark": ""}`}>
       <Cursor />
       <CursorWithRedBorder />
       {isLoading ? (
@@ -60,17 +60,17 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <header className="bg-gray-900">
+          <header className="dark:bg-primary">
             <nav>
-              <Navbar />
+              <Navbar setDark={setDark} dark={dark}/>
             </nav>
           </header>
-          <main className="bg-gray-900 min-h-screen">
+          <main className="dark:bg-primary min-h-screen">
             {/* Add your main content here */}
             <Hero/>
             <VideoComponent />
           </main>
-          <footer className="bg-gray-900">
+          <footer className="dark:bg-primary">
             {/* Footer content */}
           </footer>
         </>
