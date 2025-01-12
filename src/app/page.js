@@ -11,11 +11,16 @@ import VideoComponent from '../../components/VideoComponent';
 import Hero from '../../components/Hero';
 // import Work from '../../components/Work';
 import dynamic from 'next/dynamic'
+// import Products from '../../components/Products';
+// import WhoWeAre from '../../components/WhoWeAre';
 // import WorkDetails from '../../components/WorkDetails';
+
  
 const Work = dynamic(() => import('../../components/Work'), { ssr: false })
 const WorkDetails = dynamic(() => import('../../components/WorkDetails'), { ssr: false })
 const Mission = dynamic(() => import('../../components/Mission'), { ssr: false })
+const WhoWeAre = dynamic(() => import('../../components/WhoWeAre'), { ssr: false })
+const Products= dynamic(() => import('../../components/Products'), { ssr: false })
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -79,6 +84,8 @@ export default function Home() {
             <Work/>
             <WorkDetails/>
             <Mission/>
+            <WhoWeAre/>
+            <Products/>
           </main>
           <footer className="dark:bg-primary">
             {/* Footer content */}

@@ -6,10 +6,10 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const WorkDetails = () => {
+const Products = () => {
   useEffect(() => {
     // Animate image entrance
-    const imgElement = document.querySelector(".animated-image");
+    const imgElement = document.querySelector(".gsap-animated-image");
     if (imgElement) {
       gsap.fromTo(
         imgElement,
@@ -21,7 +21,7 @@ const WorkDetails = () => {
         },
         {
           scrollTrigger: {
-            trigger: ".image-container",
+            trigger: ".gsap-image-container",
             start: "top 90%",
             end: "top 40%",
             scrub: 1,
@@ -37,41 +37,36 @@ const WorkDetails = () => {
   }, []);
 
   useEffect(() => {
-    const items = document.querySelectorAll(".list-item");
-    const indicator = document.querySelector(".dot-indicator");
+    // Animate list items
+    const items = document.querySelectorAll(".gsap-list-item");
 
     items.forEach((item) => {
-      const arrow = item.querySelector(".arrow-icon");
+      const arrow = item.querySelector(".gsap-arrow");
 
-      item.addEventListener("mouseenter", (e) => {
-
+      item.addEventListener("mouseenter", () => {
         gsap.to(item, {
+          x: 10,
+          duration: 0.4,
+          ease: "power3.out",
+        });
+        gsap.to(arrow, {
           x: 10,
           duration: 0.3,
           ease: "power3.out",
         });
-        if (arrow) {
-          gsap.to(arrow, {
-            x: 10,
-            duration: 0.3,
-            ease: "power3.out",
-          });
-        }
       });
 
-      item.addEventListener("mouseleave", (e) => {
+      item.addEventListener("mouseleave", () => {
         gsap.to(item, {
+          x: 0,
+          duration: 0.4,
+          ease: "power3.out",
+        });
+        gsap.to(arrow, {
           x: 0,
           duration: 0.3,
           ease: "power3.out",
         });
-        if (arrow) {
-          gsap.to(arrow, {
-            x: 0,
-            duration: 0.3,
-            ease: "power3.out",
-          });
-        }
       });
     });
   }, []);
@@ -85,14 +80,8 @@ const WorkDetails = () => {
             The Future We Envision
           </h2>
 
-          {/* Dot Indicator */}
-          <div
-            className="dot-indicator w-3 h-3 rounded-full bg-secondary absolute md:left-6 opacity-0"
-            style={{ top: 0 }}
-          ></div>
-
           {/* List */}
-          <ul className="pl-4 md:pl-12 space-y-4 text-base md:text-lg leading-relaxed dark:text-white">
+          <ul className="pl-4 md:pl-12 space-y-8 text-base md:text-lg leading-relaxed dark:text-white ">
             {[
               "To revolutionize the global fashion industry by creating a circular denim ecosystem where zero waste is a reality.",
               "Transform every discarded piece of denim into something extraordinary.",
@@ -104,17 +93,17 @@ const WorkDetails = () => {
             ].map((text, index) => (
               <li
                 key={index}
-                className="list-item relative flex items-start space-x-4"
+                className="gsap-list-item relative flex items-start space-x-4 "
               >
                 {/* Arrow */}
                 <span
-                  className="arrow-icon text-secondary font-bold text-lg transition-transform duration-300"
+                  className="gsap-arrow text-secondary font-bold text-lg transition-transform duration-300"
                   style={{ display: "inline-block" }}
                 >
                   →
                 </span>
                 {/* Text */}
-                <span>{text}</span>
+                <span className="text-content-li">{text}</span>
               </li>
             ))}
           </ul>
@@ -122,18 +111,17 @@ const WorkDetails = () => {
       </div>
 
       {/* Image */}
-      <div className="image-container w-full md:w-1/2 flex justify-center md:justify-end">
+      <div className="gsap-image-container w-full md:w-1/2 flex justify-center md:justify-end">
         <Image
           src="/images/test.jpg"
           alt="Circular Denim Vision"
           width={800}
           height={400}
-          className="animated-image w-full md:w-[80%] h-auto rounded-lg shadow-lg"
+          className="gsap-animated-image w-full md:w-[80%] h-auto rounded-lg shadow-lg"
         />
       </div>
     </div>
   );
 };
 
-export default WorkDetails;
-
+export default Products;

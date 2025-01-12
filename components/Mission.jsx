@@ -8,6 +8,7 @@ customGsap.registerPlugin(ScrollTrigger);
 
 const Mission = () => {
   useEffect(() => {
+    // Animate image entrance
     const imgElement = document.querySelector(".animated-image-work");
     if (imgElement) {
       customGsap.fromTo(
@@ -36,32 +37,32 @@ const Mission = () => {
   }, []);
 
   useEffect(() => {
+    // Animate list items with arrow
     const items = document.querySelectorAll(".list-item-work");
-    const indicator = document.querySelector(".dot-indicator-work");
 
     items.forEach((item) => {
-      item.addEventListener("mouseenter", (e) => {
-        const { offsetTop, offsetHeight } = e.target;
-        customGsap.to(indicator, {
-          y: offsetTop + offsetHeight / 2 - 4,
-          opacity: 1,
-          duration: 0.3,
+      const arrow = item.querySelector(".arrow-work");
+
+      item.addEventListener("mouseenter", () => {
+        customGsap.to(item, {
+          x: 10,
+          duration: 0.4,
           ease: "power3.out",
         });
-        customGsap.to(e.target, {
+        customGsap.to(arrow, {
           x: 10,
           duration: 0.3,
           ease: "power3.out",
         });
       });
 
-      item.addEventListener("mouseleave", (e) => {
-        customGsap.to(indicator, {
-          opacity: 0,
-          duration: 0.3,
+      item.addEventListener("mouseleave", () => {
+        customGsap.to(item, {
+          x: 0,
+          duration: 0.4,
           ease: "power3.out",
         });
-        customGsap.to(e.target, {
+        customGsap.to(arrow, {
           x: 0,
           duration: 0.3,
           ease: "power3.out",
@@ -90,36 +91,30 @@ const Mission = () => {
             Our Commitment to Sustainability
           </h2>
 
-          {/* Dot Indicator */}
-          <div
-            className="dot-indicator-work w-3 h-3 rounded-full bg-secondary absolute md:left-6 opacity-0"
-            style={{ top: 0 }}
-          ></div>
-
           {/* List */}
           <ul className="pl-4 lg:pl-12 space-y-4 text-sm lg:text-lg leading-relaxed dark:text-white">
-            <li className="list-item-work relative ">
-              Reducing environmental impact by addressing the denim industry’s
-              water consumption, pollution, and waste challenges.
-            </li>
-            <li className="list-item-work relative ">
-              Empowering communities through job creation, skill development,
-              and fostering economic opportunities within local ecosystems.
-            </li>
-            <li className="list-item-work relative ">
-              Advancing circularity by championing resource efficiency,
-              eco-conscious design, and collaboration with global stakeholders.
-            </li>
-            <li className="list-item-work relative ">
-              Educating and inspiring consumers to make informed, sustainable
-              choices, promoting a cultural shift towards environmentally
-              responsible fashion.
-            </li>
-            <li className="list-item-work relative ">
-              Setting new standards for sustainability in the fashion industry,
-              combining quality, comfort, and eco-consciousness in every
-              product we create.
-            </li>
+            {[
+              "Reducing environmental impact by addressing the denim industry’s water consumption, pollution, and waste challenges.",
+              "Empowering communities through job creation, skill development, and fostering economic opportunities within local ecosystems.",
+              "Advancing circularity by championing resource efficiency, eco-conscious design, and collaboration with global stakeholders.",
+              "Educating and inspiring consumers to make informed, sustainable choices, promoting a cultural shift towards environmentally responsible fashion.",
+              "Setting new standards for sustainability in the fashion industry, combining quality, comfort, and eco-consciousness in every product we create.",
+            ].map((text, index) => (
+              <li
+                key={index}
+                className="list-item-work relative flex items-start space-x-4"
+              >
+                {/* Arrow */}
+                <span
+                  className="arrow-work text-secondary font-bold text-lg transition-transform duration-300"
+                  style={{ display: "inline-block" }}
+                >
+                  →
+                </span>
+                {/* Text */}
+                <span>{text}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
