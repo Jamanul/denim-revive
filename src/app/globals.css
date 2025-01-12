@@ -77,3 +77,8 @@ html {
     transform: translateY(-500px);
   }
 }
+
+.svg-loading-two {
+  max-width: 100%;
+  height: auto;
+}
