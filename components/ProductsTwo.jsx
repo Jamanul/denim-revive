@@ -6,10 +6,10 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Products = () => {
+const ProductsTwo = () => {
   useEffect(() => {
     // Animate image entrance
-    const imgElement = document.querySelector(".gsap-animated-image");
+    const imgElement = document.querySelector(".animated-img-product-two");
     if (imgElement) {
       gsap.fromTo(
         imgElement,
@@ -21,7 +21,7 @@ const Products = () => {
         },
         {
           scrollTrigger: {
-            trigger: ".gsap-image-container",
+            trigger: ".gsap-image-container-two",
             start: "top 90%",
             end: "top 40%",
             scrub: 1,
@@ -77,7 +77,7 @@ const Products = () => {
       <div className="text-content w-full md:w-1/2 md:pr-8">
         <div className="relative">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 dark:text-white">
-            Footwear
+          Textiles
           </h2>
 
           {/* List */}
@@ -109,17 +109,17 @@ const Products = () => {
       </div>
 
       {/* Image */}
-      <div className="gsap-image-container w-full md:w-1/2 flex justify-center md:justify-end">
+      <div className="gsap-image-container-two w-full md:w-1/2 flex justify-center md:justify-end">
         <Image
           src="/images/IMG-20240927-WA0057.jpg"
           alt="Circular Denim Vision"
           width={800}
           height={400}
-          className="gsap-animated-image w-full md:w-[80%] h-auto rounded-lg shadow-lg"
+          className="animated-img-product-two w-full md:w-[80%] h-auto rounded-lg shadow-lg"
         />
       </div>
     </div>
   );
 };
 
-export default Products;
+export default ProductsTwo;

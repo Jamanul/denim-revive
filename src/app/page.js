@@ -11,6 +11,9 @@ import VideoComponent from '../../components/VideoComponent';
 import Hero from '../../components/Hero';
 // import Work from '../../components/Work';
 import dynamic from 'next/dynamic'
+// import ProductsOne from '../../components/ProductsOne';
+// import ProductsTwo from '../../components/ProductsTwo';
+// import ProductsThree from '../../components/ProductsThree';
 // import Products from '../../components/Products';
 // import WhoWeAre from '../../components/WhoWeAre';
 // import WorkDetails from '../../components/WorkDetails';
@@ -21,6 +24,9 @@ const WorkDetails = dynamic(() => import('../../components/WorkDetails'), { ssr:
 const Mission = dynamic(() => import('../../components/Mission'), { ssr: false })
 const WhoWeAre = dynamic(() => import('../../components/WhoWeAre'), { ssr: false })
 const Products= dynamic(() => import('../../components/Products'), { ssr: false })
+const ProductsOne= dynamic(() => import('../../components/ProductsOne'), { ssr: false })
+const ProductsTwo= dynamic(() => import('../../components/ProductsTwo'), { ssr: false })
+const ProductsThree= dynamic(() => import('../../components/ProductsThree'), { ssr: false })
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -86,6 +92,9 @@ export default function Home() {
             <Mission/>
             <WhoWeAre/>
             <Products/>
+            <ProductsOne/>
+            <ProductsTwo/>
+            <ProductsThree/>
           </main>
           <footer className="dark:bg-primary">
             {/* Footer content */}
