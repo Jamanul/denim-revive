@@ -15,6 +15,7 @@ import dynamic from 'next/dynamic'
  
 const Work = dynamic(() => import('../../components/Work'), { ssr: false })
 const WorkDetails = dynamic(() => import('../../components/WorkDetails'), { ssr: false })
+const Mission = dynamic(() => import('../../components/Mission'), { ssr: false })
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -77,6 +78,7 @@ export default function Home() {
             <VideoComponent />
             <Work/>
             <WorkDetails/>
+            <Mission/>
           </main>
           <footer className="dark:bg-primary">
             {/* Footer content */}

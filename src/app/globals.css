@@ -67,3 +67,13 @@ html {
 * {
   @apply  transition-colors duration-200;
 }
+
+.growDiv {
+  transform: translateY(-300px);
+}
+
+@media (min-width: 768px) {
+  .growDiv {
+    transform: translateY(-500px);
+  }
+}
