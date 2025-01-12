@@ -79,7 +79,7 @@ export default function Home() {
       ) : (
         <>
           <header className="dark:bg-primary">
-            <nav>
+            <nav  >
               <Navbar setDark={setDark} dark={dark}/>
             </nav>
           </header>
