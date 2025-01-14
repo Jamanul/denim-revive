@@ -72,7 +72,7 @@ const Mission = () => {
   }, []);
 
   return (
-    <div className="work-details-container flex flex-col-reverse lg:flex-row container mx-auto px-4 lg:px-8 h-auto lg:h-[90vh] items-center space-y-8 lg:space-y-0 lg:space-x-8">
+    <div className="work-details-container flex flex-col-reverse lg:flex-row container mx-auto px-4 gap-4 md:gap-8 lg:gap-0 mb-8 md:mb-16 lg:mb-0 lg:px-8 h-auto lg:h-[90vh] items-center space-y-8 lg:space-y-0 lg:space-x-8 ">
       {/* Image */}
       <div className="image-container-work w-full lg:w-1/2 flex justify-center lg:justify-start">
         <Image

@@ -2,11 +2,11 @@ import React from "react";
 import './css/skeleton.css';
 const SkeletonLoading = () => {
   return (
-    <div >
+    <div className="h-[100vh] flex justify-normal items-center">
       <svg
         width="431"
         height="52"
-        className="svg-loading svg-loading-two"
+        className="svg-loading svg-loading-two "
         viewBox="0 0 431 52"
         fill="#ffffff"
         xmlns="http://www.w3.org/2000/svg"

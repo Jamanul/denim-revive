@@ -68,17 +68,30 @@ html {
   @apply  transition-colors duration-200;
 }
 
-.growDiv {
-  transform: translateY(-300px);
-}
-
-@media (min-width: 768px) {
-  .growDiv {
-    transform: translateY(-500px);
-  }
-}
 
 .svg-loading-two {
   max-width: 100%;
   height: auto;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 2px; /* Adjust thickness */
+  background-color: currentColor; /* Same as text color */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+
+.nav-item:hover::after {
+  width: 100%; /* Full width on hover */
 }
