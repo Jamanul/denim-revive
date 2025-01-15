@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export default function RootLayout({ children }) {
-  const [dark, setDark] = useState(false); // Dark mode state
+  const [dark, setDark] = useState(true); // Dark mode state
   const [isLoading, setIsLoading] = useState(true); // Loading state
 
   // Simulate loading time

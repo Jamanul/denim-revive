@@ -3,6 +3,7 @@ import { Oswald } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import Hero from '../../components/Hero';
 import VideoComponent from '../../components/VideoComponent';
+// import HorizontalScroll from '../../components/HorizontalScroll';
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -16,6 +17,7 @@ const Work = dynamic(() => import('../../components/Work'), { ssr: false });
 const WorkDetails = dynamic(() => import('../../components/WorkDetails'), { ssr: false });
 const Mission = dynamic(() => import('../../components/Mission'), { ssr: false });
 const WhoWeAre = dynamic(() => import('../../components/WhoWeAre'), { ssr: false });
+const HorizontalScroll = dynamic(() => import('../../components/HorizontalScroll'), { ssr: false });
 
 export default function Home() {
   return (
@@ -27,6 +29,7 @@ export default function Home() {
       <WorkDetails />
       <Mission />
       <WhoWeAre />
+      <HorizontalScroll/>
     </div>
   );
 }
